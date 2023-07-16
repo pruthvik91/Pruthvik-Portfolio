@@ -1,0 +1,139 @@
+
+.laptop {
+    width: 300px;
+  height: 300px;
+  transform-style: preserve-3d;
+  animation: spin 14s infinite ease;
+  transition: transform 0.2s ease;
+}
+.laptop:hover {
+    transform: rotate3d(0.2, 1, 0, -40deg);
+
+}
+.top {
+    position: absolute;
+    height: 150px;
+    width: 200px;
+    background: rgb(165, 165, 165);
+}
+.top::before/*top left side*/ {
+    content: "";
+    height: 150px;
+    width: 9px;
+    background: rgb(94, 94, 94);
+    position: absolute;
+    left: -5px;
+    transform: rotateY(-90deg) translatex(-3px);
+}
+
+.top-b /*back of top*/{
+    height: 150px;
+    width: 200px;
+    background: rgb(179, 179, 179);
+    transform: translatez(-7px);
+}
+
+.top::after/*top right side*/ {
+    content: "";
+    height: 150px;
+    width: 9px;
+    background: rgb(73, 73, 73);
+    position: absolute;
+    right: -5px;
+    transform: rotateY(90deg) translateX(3px);
+}
+
+.screen /*black screen containing text*/ {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 130px;
+    width: 185px;
+    background: rgb(14, 14, 14);
+    color: rgb(14, 14, 14);
+    animation: glow 7s infinite 
+}
+.screen::before/*screen glow*/{
+    content: "";
+    position: absolute;
+    height: 200px;
+    width: 280px;
+    background: rgba(255, 255, 255, 0.109);
+    border-radius: 30%;
+    filter: blur(60px);
+}
+
+.bottom {
+    position: absolute;
+    height: 150px;
+    width: 200px;
+    background: rgb(211, 211, 211);
+    transform-origin: top;
+    transform: rotateX(80deg);
+}
+
+.bottom::before/*keyboard*/ {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -70%);
+    height: 80px;
+    width: 180px;
+    border-radius: 7px;
+    background: rgb(104, 104, 104);
+}
+
+.bottom::after/*touch pad*/ {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 70%;
+    transform: translate(-50%);
+    height: 30px;
+    width: 70px;
+    border-radius: 7px;
+    background: rgb(104, 104, 104);
+}
+
+.bottom-b /*underneath*/ {
+    position: absolute;
+    height: 150px;
+    width: 200px;
+    background: rgb(168, 168, 168);
+    transform: rotateX(80deg) translateZ(70px) translateY(60px);
+    transform-style: preserve-3d;
+}
+
+.bottom-b::after /*front side*/ {
+    content: "";
+    position: absolute;
+    top: 148px;
+    height: 4px;
+    width: 200px;
+    background: rgb(107, 107, 107);
+    transform: rotateX(69deg) translateY(2px) ;
+}
+
+.b-side /*left side base*/ {
+    position: absolute;
+    left: -2px;
+    height: 150px;
+    width: 4px;
+    background: rgb(87, 87, 87);
+    transform: rotateY(90deg) rotateZ(80deg)translatex(-72px) translateY(62px) ;
+    transform-style: preserve-3d;
+}
+
+.b-side::after /*right side base*/ {
+    content: "";
+    position: absolute;
+    height: 150px;
+    width: 4px;
+    background: rgb(116, 116, 116);
+   transform: translatez(200px);
+}
